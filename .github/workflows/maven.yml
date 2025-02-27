@@ -19,9 +19,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: ctw04128/academy/.github/actions/maven_build@main
-    - uses: ctw04128/academy/.github/actions/docker_build@main
+    - name: 'Checkout'
+      uses: actions/checkout@v4
+    - name: 'Maven Build'
+      uses: ctw04128/academy/.github/actions/maven_build@main
+    - name: 'Docker Build'
+      uses: ctw04128/academy/.github/actions/docker_build@main
 
 
 
