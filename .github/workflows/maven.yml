@@ -21,10 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: ctw04128/academy/.github/actions/maven_build@main
-    - name: Create Docker Image
-      run: docker build . --file ./src/main/docker/Dockerfile.jvm --tag academy:$(date +%s)
-    - name: List Docker Images
-      run: docker images
+    - uses: ctw04128/academy/.github/actions/docker_build@main
 
 
 

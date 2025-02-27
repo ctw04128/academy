@@ -1,0 +1,12 @@
+name: Build
+description: 'Build a Docker Image and list all images'
+
+runs:
+  using: composite
+  steps:
+    - name: Create Docker Image
+      run: docker build . --file ./src/main/docker/Dockerfile.jvm --tag academy:$(date +%s)
+      shell: bash
+    - name: List Docker Images
+      run: docker images
+      shell: bash
