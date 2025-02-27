@@ -20,8 +20,12 @@ runs:
             echo "TAG=${{ inputs.tag_name }}" >> $GITHUB_ENV
         fi
       shell: bash
+    - name: Define Image name
+      run: |
+        echo "DOCKER_IMAGE_NAME=${{inputs.image_name}}:${{env.TAG}}" >> $GITHUB_ENV
+      shell: bash
     - name: Create Docker Image
-      run: docker build . --file ${{inputs.path_dockerfile}} --tag ${{inputs.image_name}}:${{env.TAG}}
+      run: docker build . --file ${{inputs.path_dockerfile}} --tag ${{env.DOCKER_IMAGE_NAME}}
       shell: bash
     - name: List Docker Images
       run: docker images

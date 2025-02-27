@@ -29,8 +29,12 @@ jobs:
         path_dockerfile: ./src/main/docker/Dockerfile.jvm
         image_name: academy
         tag_name: v1
-
-
+    - name: 'Docker Push'
+      uses: ctw04128/academy/.github/actions/docker_push@main
+      with:
+        dockerhub_user: ${{ vars.DOCKERHUB_USERNAME }}
+        dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
+        docker_image: academy
 
 
 
