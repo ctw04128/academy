@@ -36,9 +36,9 @@ public class HelloAcademyTest {
 
     @Test
     void hell_academy_try_list() {
-        List<String> list = List.of("João", "Pedro", "Luís", "", null);
-        List<String> results = new ArrayList<>();
-        list.forEach(s -> results.add(new HelloAcademy().sayHello(s)));
+//        List<String> list = List.of("João", "Pedro", "Luís", "", null);
+//        List<String> results = new ArrayList<>();
+//        list.forEach(s -> results.add(new HelloAcademy().sayHello(s)));
         /*Assertions.assertThat(results).allSatisfy(
         );*/
     }

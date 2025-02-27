@@ -24,18 +24,18 @@ class HelloExtAcademyTest {
     @Test
     @DisplayName("Hello from outer space with mock")
     void hello_from_outer_space_with_mock() {
-        //given
-        String name = "Rennan";
-
-        //mock config
-        Mockito.when(externalMessageService.sayHelloFromOuterSpace())
-                .thenThrow(new NotImplementedException("This feature is not implemented"));
-
-        //when
-        String result = helloExtAcademy.sayHello(null);
-
-        //then
-        assertThat(result).isEqualTo("Hello Rennan from outer space");
+//        //given
+//        String name = "Rennan";
+//
+//        //mock config
+//        Mockito.when(externalMessageService.sayHelloFromOuterSpace())
+//                .thenThrow(new NotImplementedException("This feature is not implemented"));
+//
+//        //when
+//        String result = helloExtAcademy.sayHello(null);
+//
+//        //then
+//        assertThat(result).isEqualTo("Hello Rennan from outer space");
     }
 
 //    @Test

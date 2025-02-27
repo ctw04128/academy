@@ -6,7 +6,11 @@ import com.ctw.workstation.util.Message;
 import io.quarkus.logging.Log;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.*;
+
+import java.util.Collections;
+import java.util.HashSet;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
@@ -33,7 +37,7 @@ public class TeamResourceTest {
         .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body(equalTo("No Teams were found!"));
+                .body("", equalTo(Collections.emptyList()));
     }
 
     @Test
@@ -111,7 +115,7 @@ public class TeamResourceTest {
         .then()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body(equalTo("No Teams were found!"));
+                .body("", equalTo(Collections.emptyList()));
     }
 
 
