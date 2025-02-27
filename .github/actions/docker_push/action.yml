@@ -18,5 +18,5 @@ runs:
         username: ${{inputs.dockerhub_user}}
         password: ${{inputs.dockerhub_token}}
     - name: Push Docker Image
-      run: docker push ${{inputs.dockerhub_user}}/${{env.DOCKER_IMAGE_NAME}}
+      run: docker push ${{env.DOCKER_IMAGE_NAME}}
       shell: bash
