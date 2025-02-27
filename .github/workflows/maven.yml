@@ -28,6 +28,11 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Create Docker Image
+      run: docker build . --file ./src/main/docker/Dockerfile.jvm --tag academy:$(date +%s)
+    - name: List Docker Images
+      run: docker images
+
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
   #  - name: Update dependency graph
